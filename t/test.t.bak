@@ -1,0 +1,31 @@
+use Getopt::Long::Descriptive::ManMaker;
+use Getopt::Long::Descriptive;
+use File::Copy qw(cp);
+use FindBin qw($Bin);
+
+cp($0, "$0.pl");
+
+if($0 =~ m{\.t$}){
+ 
+system ( $^X, "-Mlib=$Bin/../lib", "$0.pl");
+print qx(cat $0.pl);
+exit;
+}
+
+my ($opt, $usage) = describe_options(
+  'my-program %o <some-arg>',
+  [ 'server|s=s', "the server to connect to"                  ],
+  [ 'port|p=i',   "the port to connect to", { default => 79 } ],
+  [],
+  [ 'verbose|v',  "print extra stuff"            ],
+  [ 'help',       "print usage message and exit" ],
+);
+
+__END__
+=head1 NAME
+
+=head1 SYNOPSIS
+
+=head1 DESCRIPTION
+
+=cut

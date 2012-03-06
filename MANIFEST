@@ -1,0 +1,12 @@
+Changes
+ignore.txt
+lib/Getopt/Long/Descriptive/ManMaker.pm
+Makefile.PL
+MANIFEST			This list of files
+README
+t/00-load.t
+t/manifest.t
+t/pod-coverage.t
+t/pod.t
+t/test.t
+t/test.t.pl.ref
